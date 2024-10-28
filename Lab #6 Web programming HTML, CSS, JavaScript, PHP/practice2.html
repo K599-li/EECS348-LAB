@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EECS 348 Lab Seven Practice Two</title>
+    <style>
+        #alteredParagraph {
+            border: 5px solid black;
+            padding: 10px;
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>EECS 348 Lab Seven Practice Two</h1>
+    <p id="alteredParagraph">Paragraph to be altered.</p>
+    <div>
+        <label for="borderR">Border R(0-255):</label>
+        <input type="number" id="borderR" min="0" max="255">
+        <br>
+        <label for="borderG">Border G(0-255):</label>
+        <input type="number" id="borderG" min="0" max="255">
+        <br>
+        <label for="borderB">Border B(0-255):</label>
+        <input type="number" id="borderB" min="0" max="255">
+        <br>
+        <label for="borderWidth">Border Width:</label>
+        <input type="number" id="borderWidth" min="1">
+        <br><br>
+        <label for="bgR">Background R(0-255):</label>
+        <input type="number" id="bgR" min="0" max="255">
+        <br>
+        <label for="bgG">Background G(0-255):</label>
+        <input type="number" id="bgG" min="0" max="255">
+        <br>
+        <label for="bgB">Background B(0-255):</label>
+        <input type="number" id="bgB" min="0" max="255">
+        <br><br>
+        <button onclick="changeColor()">Change the color!</button>
+    </div>
+
+    <script>
+        function changeColor() {
+            // Get RGB values for the border
+            const borderR = document.getElementById("borderR").value;
+            const borderG = document.getElementById("borderG").value;
+            const borderB = document.getElementById("borderB").value;
+            const borderWidth = document.getElementById("borderWidth").value;
+            
+            // Get RGB values for the background
+            const bgR = document.getElementById("bgR").value;
+            const bgG = document.getElementById("bgG").value;
+            const bgB = document.getElementById("bgB").value;
+
+            // Change the paragraph's border and background color
+            const paragraph = document.getElementById("alteredParagraph");
+            paragraph.style.border = `${borderWidth}px solid rgb(${borderR}, ${borderG}, ${borderB})`;
+            paragraph.style.backgroundColor = `rgb(${bgR}, ${bgG}, ${bgB})`;
+        }
+    </script>
+</body>
+</html>
